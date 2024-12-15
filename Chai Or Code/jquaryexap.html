@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        function Add() {
+           var a1 = parseFloat($('#txt1').val());
+           var a2 = parseFloat($('#txt2').val());
+           var a3 = a1+a2;
+           $('#txt3').val(a3);
+
+            
+        }
+        function start() {
+
+            var a = $('#p1').val();
+            var allstar='';
+            for (let i = 1; i <= a; i++) {
+                 for (let j = 1; j <= a; j++) {
+                       allstar+='*' ;
+
+                 }        
+                 allstar+='<br>'        
+            }
+
+            $('#div1').html(allstar);
+
+            
+        }
+        var trSrn = 1;
+        function AddRow() {
+                $('#tbody').append('<tr id="tr_'+trSrn+'"><td><input type="text" placeholder="name"></td><td><input type="text" placeholder="class"></td><td><input type="date"></td><td><select><option value="">Select</option><option value="Male">Male</option><option value="Female">Female</option></select></td><td><input type="button" value="X" onclick="remove('+trSrn+')"></td></tr>');
+                trSrn++;
+            }
+            function remove(trn) {
+                $('#tr_'+trn).remove();
+            }
+
+            function array(In) {
+                var a = In.split(' ');
+                for (let i = 0; i < a.length; i++) {
+                    console.log(a[i]);
+                    
+                }
+            }
+    </script>
+
+
+
+    <form action="">
+        <input type="text" id="txt1">
+        <input type="text" id="txt2">
+        <input type="text" id="txt3">
+        <input type="button" value="Add" onclick="Add()">
+    </form>
+
+    <input type="text" id="p1" onchange="start()">
+    <div id="div1" style="height: 300px;width: 400px; background-color: antiquewhite;"></div>
+
+    <table style="width:  500px; " id="">
+        <thead> <tr>
+            <th>Name</th>
+            <th>Class</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Action</th>
+            
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        <tr id="tr_0">
+            <td><input type="text"  placeholder="name"></td>
+            <td><input type="text"  placeholder="class"></td>
+            <td><input type="date"  ></td>
+            <td><select name="select" id=""><option >select</option><option value="male">male</option>
+            <option value="female">female</option></select></td>
+            <td><input type="button" value="X" onclick="remove(0)"></td>
+        </tr>
+    </tbody>
+    </table>
+    <input type="button" value="add row" onclick="AddRow()">
+
+    <input type="text" id="arr" onchange="array(this.value)">
+
+    
+</body>
+</html>

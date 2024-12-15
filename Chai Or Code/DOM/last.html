@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAY HANUMAN</title>
+</head>
+<body style="background-color: violet;color: white;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+    
+</body>
+<script>
+    function addLanguage(lanName){
+        const li = document.createElement("li")
+        // li.innerHTML=`${lanName}`
+        const text = document.createTextNode(`language ${lanName}`)
+        li.appendChild(text)
+        document.querySelector(".language").appendChild(li)
+
+
+    }
+    addLanguage("java")
+    addLanguage("c++")
+
+    // Edit - reolace
+
+const secondlang = document.querySelector("li:nth-child(2)")
+ //sexondlang.inneraHTML ="mojo"
+ const newli = document.createElement("li") 
+ newli.textContent ="Mojo"
+secondlang.replaceWith(newli)
+
+    // // //edit
+    // const firstlang =document.querySelector("li:first-child")
+    // firstlang.outerHTML="<li>C</li>"
+
+    // // //remove
+    // const lastLang = document.querySelector("li:last-child")
+    // lastLang.remove()
+     
+</script>
+</html>
+    

@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>JQuery</title>
+    </head>
+    <body>
+        <h1>JQuery</h1>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script>
+            var trSrn =1;
+            function AddRow() {
+                $('#tbody').append('<tr id="tr_'+trSrn+'"><td><input type="text" name="" placeholder="name"></td><td><input type="text" name="" placeholder="class"></td><td><input type="date" name=""placeholder=""></td><td> <select><option>Select</option><option>Male</option><option>Female</option> </select> </td><td><input type="button" name=""name="X" value="X" onclick="remove('+trSrn+')"></td></tr>');
+                trSrn++;
+                  
+            }
+            function remove(ar) {
+                $('#tr_'+ar).ramove();
+            }
+
+
+        </script>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>class</th>
+                    <th>Dob</th>
+                    <th>Gender</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                 <tr id="tr_0">
+                    <td><input type="text" name="" placeholder="name"> </td>
+                    <td><input type="text" name="" placeholder="class"></td>
+                    <td><input type="date" ></td>
+                    <td> <select><option>Select</option><option>Male</option><option>Female</option> </select> </td>
+                    <td><input type="button" value="x" onclick="remove(0)"></td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="button" value="addRow"  name="" onclick="AddRow()">
+
+    </body>
+</html>

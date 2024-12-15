@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>JQuery</title>
+    </head>
+    <body>
+        <h1>Javascript</h1>
+         <form>
+            <input type="text" id="text1">
+            <input type="text" id="text2">
+            <input type="text" id="text3" placeholder="result">
+            <input type="button" onclick="checkval()" value="Add">
+        </form>
+        <input type="number" id="text4" onchange="start()">
+        <div id="response" style="height: 300px; width: 300px; background-color: #ccc;"></div>
+        
+        <input type="text" id="text5">
+        <input type="text" id="text6">
+        <input type="button" onclick="checkval2()" value="check">
+        <script>
+            function start()
+            {
+                var a1 = document.getElementById('text4').value;
+                var allstar='';
+                for(var i=1; i<=a1; i++)
+                {
+                    for(var j=1; j<=i; j++)
+                    {
+                        allstar+='*';
+                    }
+                    allstar+='<br>';
+                }
+                document.getElementById('response').innerHTML=allstar;
+            }
+            function checkval2()
+            {
+                var a1 = document.getElementById('text5').value;
+                var a2 = document.getElementById('text6').value;
+                if(a1<a2)
+                {
+                    alert('a2 ('+a2+') is greater than a1 ('+a1+')');
+                }
+                else
+                {
+                    alert('a1 ('+a1+') is greater than a2 ('+a2+')');
+                }
+            }
+            function checkval()
+            {
+                var a1 = document.getElementById('text1').value;
+                var a2 = document.getElementById('text2').value;
+                var a3 = parseFloat(a1)+parseFloat(a2);
+                document.getElementById('text3').value=a3;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const requestURL='https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requestURL);
+    // console.log(xhr.readyState)
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState)
+        if (xhr.readyState===4) {
+            //direct respone print krane ke liye or yh response text hmesha string me hoga
+    // console.log(this.responseText)
+
+    //ab hme ydi es responseText me se followers chahiye toh 
+    // const data = this.responseText
+    // console.log(typeof data);
+    // console.log(data.followers) // result(console )me undifined dega q kee jo response text hai wo hmra string me hota hai or jis trike se hm followers nikal rhe hai wo trika hmesha object me use kiya jata or hme follower ko print krane ke liye phle responeText ko object me change krna pdega 
+    const data = JSON.parse(this.responseText)
+    console.log(typeof data);
+    console.log(data.followers)
+            
+        }
+    }
+    xhr.send()
+</script>
+</html>

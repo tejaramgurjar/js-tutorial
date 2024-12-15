@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Add() {
+             var a1 = parseFloat(document.getElementById('txt1').value)
+             var a2 = parseFloat(document.getElementById('txt2').value)
+             var a3 = a1+a2;
+             document.getElementById('txt3').value=a3;
+
+
+        }
+        function start()
+            {
+                var a1 = document.getElementById('text4').value;
+                var allstar='';
+                for(var i=1; i<=a1; i++)
+                {
+                    for(var j=1; j<=i; j++)
+                    {
+                        allstar+='*';
+                    }
+                    allstar+='<br>';
+                }
+                document.getElementById('response').innerHTML=allstar;
+            }
+
+            function check() {
+                var a1 = parseFloat(document.getElementById('g1').value)
+             var a2 = parseFloat(document.getElementById('g2').value)
+             if (a1>a2) {
+                alert('a1 ('+a1+') is grater than a2 ('+a2+')')
+             } else {
+                alert('a2 ('+a2+') is grater than a1 ('+a1+')')
+             }
+                
+            }
+    </script>
+    <form action="">
+      
+            <input type="text" id= "txt1" >
+            <input type="text" id ="txt2">
+            <input type="text" id="txt3">
+
+        <input type="button" value="Add" onclick="Add()">
+    </form>
+<!-- // pattern -->
+<input type="number" id="text4" onchange="start()">
+<input type="button" value="print pattern" onclick="start()">
+<div id="response" style="height: 300px; width: 300px; background-color: wheat;"></div>
+
+
+<!-- greater number -->
+
+<input type="text" id="g1">
+<input type="text" id="g2">
+<input type="button" value="check" onclick="check()">
+
+    
+</body>
+</html>

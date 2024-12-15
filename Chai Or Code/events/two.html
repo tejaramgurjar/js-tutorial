@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai or code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //setTimeout method api ko bhi call krta hai ,or yh callback function leta hai 
+    //setTimeout or setInterval function ek jese hee hote hai bss setTimeout function me ye btaya jata hai kee me ek kaam ko itne time baad kr dunga jabli setInterval me ye btaya jata hai kee ek interval baad ye kaam baar baar hote rhega
+
+// first mathod
+
+    // setTimeout(function(){
+    //   console.log("teju")
+    // },2000)
+
+   const sayHitesh = function () {
+    console.log("Hitesh")
+
+}
+setTimeout(sayHitesh,2000)
+
+// document.querySelector('h1').innerHTML="best js series" // ab me chata hu yhi kaam 5 sec baad ho toh
+
+const changeText =function () {
+    document.querySelector('h1').innerHTML="best js series"
+    
+}
+// setTimeout(changeText,5000)
+
+
+
+// ab es setTimeout()ya event ko rokne ke liye bhi ek functiion hota hai:-clearTimeout() or clearTimeout ko hmesha ek refrence chaiye hota hai kee aaap kisko rokna chate hai 
+
+const ChangeMe =setTimeout(changeText,5000)
+// clearTimeout(ChangeMe)
+
+// ab me esko ek event par lgana chata hu 
+document.querySelector("#stop").addEventListener('click',function () {
+    clearTimeout(ChangeMe)
+    // document.querySelector('h1').innerHTML="chai or code"
+    console.log('stop')
+    
+})
+
+</script>
+</html>

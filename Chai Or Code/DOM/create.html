@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day">thursday</div>
+    </div>
+    
+    
+    
+</body>
+
+<script>
+    
+    const elems = document.querySelector(".parent")
+    console.log(elems)
+    console.log(elems.children)
+    console.log(elems.children[0])
+    console.log(elems.children[0].innerHTML)
+
+for (let i = 0; i < elems.children.length; i++) {
+     console.log(elems.children[i].innerHTML)
+    
+}
+elems.children[1].style.backgroundColor = "green";
+
+   const first =elems.firstElementChild
+   const last =elems.lastElementChild
+   console.log(first)
+   console.log(last)
+
+   //child se parent
+
+   const dayOne = document.querySelector(".day");
+   console.log(dayOne)
+   console.log(dayOne.parentElement)
+
+   console.log("NODES: ",elems.childNodes)
+   //it is give text and comments and anyother and children is oposite of this
+
+
+</script>
+</html>

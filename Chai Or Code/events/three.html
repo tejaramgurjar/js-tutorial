@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai or javascript</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    // setInterval(function(){
+    //     // console.log("shyam ",Date.now())
+    // },1000)
+
+
+
+//      const sayDate = function(){
+//         console.log("Hitesh",Date.now());
+//      }
+// setInterval(sayDate,1000)
+
+
+
+// setinterval me hm perameters bhi pass kr skte hai jese
+
+//      const sayDate = function(str){
+//         console.log(str,Date.now());
+//      }
+// setInterval(sayDate,1000,"teju")
+
+
+//setInterval ko rokne ke liye clear interval bhi hota hai or esme hmrefrence daal denge 
+
+//      const sayDate = function(str){
+//         console.log(str,Date.now());
+//      }
+//  const clear =     setInterval(sayDate,1000,"teju")
+
+//  clearInterval(clear)
+
+
+//  const startFunc=   function() {
+//     console.log("Run Teju")
+    
+// }
+//  document .querySelector("#start").addEventListener("click",function(){
+//   let forstop=  setInterval(startFunc,1000)
+
+
+// document.querySelector("#stop").addEventListener("click",function(){
+//     clearInterval(forstop)
+// })
+    
+// })
+let foestop;
+document.querySelector("#start").addEventListener("click",function(){
+   foestop = setInterval(function(){
+        console.log("Run Teju")
+    },1000)
+})
+
+
+document.querySelector("#stop").addEventListener("click",function(){
+   clearInterval(foestop)
+   console.log('stopped');
+})
+
+
+
+
+
+
+
+
+</script>
+
+</html >

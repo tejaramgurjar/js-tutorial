@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a  href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+    
+</body>
+
+
+
+</script><script>
+    //first method
+    // direct onlick function lga do jese kee <li><img width="200px" id="owl" onlick="alert('owl')" src="https://"images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+
+    // 2nd method
+    // document.getElementById("owl").onclick= function () {
+    //     alert("owl clicked")
+    // }
+
+
+    // 3rd(best) best method
+    // document.getElementById('owl').addEventListener('click',function(){
+    //     alert("owl clicked again")
+    // },false)
+    
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log(e);
+    // },false)
+   
+    //false= default(event bubling)(bottom se top)
+    //true= default(event capturing)(top se bottom)
+    //type pdo ,timestamp ,defaultPrevented
+    //target , toElement ,srcElemet,currentTarget,
+    //clientX,clientY,screenX,screenY
+    //altKey ,ctrlkey ,shiftkey ,keycode
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("click inside the ul");
+    // },false)
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("click owl");
+    // },false)
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("click inside the ul");
+    // },true)
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("click owl");
+    // },true)
+
+
+    //stopPropagation() ye krne par jab hm owl par click krege tab wo bubling hokar upar wale me nhi jayega or owl ko hee print krega jese
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("click owl");
+    //     e.stopPropagation()
+    // },false)
+    //only console me click owl dega
+
+    //ab me page me google par click kru toh google par nhi jana chaiye
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+       
+    // },false)
+
+    // document.querySelector("#images").addEventListener('click',function(e){
+    // console.log(e.target)
+    // jha hm click kar rhe h wo dega 
+    // ab hm chate hai kee jis image par click kre wo complete ht jaye or sath me dot bhi ,esliye hme image ke parent tag ko select krna pdega jo kee li hai or use htane se image or dot dono hat jayenge 
+
+    // console.log(e.target.parentNode);
+// remove krne ke liye image or dot dono ko mtlb li ko 
+    // let removeIt =e.target.parentNode
+    // removeIt.remove()
+ 
+    // }, false)
+
+    // ab ydi hm li(dot,etc) par click kar denge toh uska parent yani kee complte ul tag remove ho jayega toh esse bachne ke liye
+
+    //  console.log(e.target.tagName)
+    //  if (e.target.tagName==='IMG') {
+    // let removeIt =e.target.parentNode
+
+    //     removeIt.remove()
+    //  }
+    
+ 
+    // }, false)
+
+      
+</script>
+</html>
